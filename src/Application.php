@@ -37,7 +37,7 @@ class Application
     
     public function __get($name)
     {
-        if (!$this->$name) {
+        if (!isset($this->$name)) {
             $class_name = ucfirst($name);
             $application = "\\Abbotton\\MeituanTakeaway\\Request\\{$class_name}";
             if (!class_exists($application)) {
