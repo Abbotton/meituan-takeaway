@@ -5,7 +5,7 @@
 # 安装
 
 ```shell script
-composer require abbotton/meituan-takeaway:dev-master
+composer require abbotton/meituan-takeaway
 ```
 
 # 使用
