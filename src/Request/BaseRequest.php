@@ -95,10 +95,9 @@ class BaseRequest
         );
         
         $params = array_merge($params_head, $params);
-        
-        $sig = $this->generateSignature($this->config->request_url . $action, $params);
-        
-        $url = $this->config->request_url . $action . "?sig=" . $sig . "&" . $this->concatParams($params);
+        $url = $this->config->request_url . $action;
+        $sig = $this->generateSignature($url, $params);
+        $params['sig'] = $sig;
         
         return $this->request('POST', $url, [$enctype => $params]);
     }
