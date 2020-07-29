@@ -15,7 +15,7 @@ class Config
     public $request_url = "https://waimaiopen.meituan.com/api/v1/";
     
     private $logger;
-    private $log_path;
+    public $log_path;
     
     public function __construct($config)
     {
@@ -38,7 +38,7 @@ class Config
             $this->request_url = $config['request_url'];
         }
         
-        $this->log_path = $config['log_path'] ?? 'logs/takeaway.log';
+        $this->log_path = isset($config['log_path']) ? $config['log_path'] : '';
     }
     
     public function getLogger()

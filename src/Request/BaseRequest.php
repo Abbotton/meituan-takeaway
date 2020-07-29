@@ -55,19 +55,21 @@ class BaseRequest
         $log_id = $this->createRequestId();
         
         $method = strtoupper($method);
-        
-        $this->log->debug('API Request:', compact('log_id', 'url', 'method', 'options'));
+    
+        if ($this->config->log_path) {
+            $this->log->debug('API Request:', compact('log_id', 'url', 'method', 'options'));
+        }
         
         $response = $this->getHttpClient()->request($method, $url, $options);
-        
-        $this->log->debug('API Response:', [
-            'log_id' => $log_id,
-            'Status' => $response->getStatusCode(),
-            'Reason' => $response->getReasonPhrase(),
-            'Headers' => $response->getHeaders(),
-            'Body' => strval($response->getBody()),
-        ]);
-        
+        if ($this->config->log_path) {
+            $this->log->debug('API Response:', [
+                'log_id' => $log_id,
+                'Status' => $response->getStatusCode(),
+                'Reason' => $response->getReasonPhrase(),
+                'Headers' => $response->getHeaders(),
+                'Body' => strval($response->getBody()),
+            ]);
+        }
         return $response->getBody();
     }
     
