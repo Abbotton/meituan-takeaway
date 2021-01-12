@@ -2,15 +2,13 @@
 
 namespace Abbotton\MeituanTakeaway\Request;
 
-use Psr\Http\Message\StreamInterface;
-
 class Medicine extends BaseRequest
 {
     /**
      * 创建药品分类
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function catSave(array $params)
     {
@@ -21,7 +19,7 @@ class Medicine extends BaseRequest
      * 更新药品分类
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function catUpdate(array $params)
     {
@@ -32,7 +30,7 @@ class Medicine extends BaseRequest
      * 删除药品分类
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function catDelete(array $params)
     {
@@ -43,7 +41,7 @@ class Medicine extends BaseRequest
      * 查询门店药品分类列表
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function catList(array $params)
     {
@@ -54,7 +52,7 @@ class Medicine extends BaseRequest
      * 创建药品
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function save(array $params)
     {
@@ -65,7 +63,7 @@ class Medicine extends BaseRequest
      * 更新药品
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function update(array $params)
     {
@@ -76,7 +74,7 @@ class Medicine extends BaseRequest
      * 批量创建药品
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function batchsave(array $params)
     {
@@ -87,7 +85,7 @@ class Medicine extends BaseRequest
      * 批量更新药品
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function batchupdate(array $params)
     {
@@ -98,7 +96,7 @@ class Medicine extends BaseRequest
      * 删除药品
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function delete(array $params)
     {
@@ -109,7 +107,7 @@ class Medicine extends BaseRequest
      * 查询门店药品列表
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function list(array $params)
     {
@@ -120,7 +118,7 @@ class Medicine extends BaseRequest
      * 批量更新药品库存
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function stock(array $params)
     {
@@ -131,7 +129,7 @@ class Medicine extends BaseRequest
      * 批量更新药品价格
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function price(array $params)
     {
@@ -142,7 +140,7 @@ class Medicine extends BaseRequest
      * 批量更新 app_medicine_code
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function codeUpdate(array $params)
     {
@@ -153,7 +151,7 @@ class Medicine extends BaseRequest
      * 药品批量上下架
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function isSoldOut(array $params)
     {
@@ -164,10 +162,43 @@ class Medicine extends BaseRequest
      * 查询任务进程
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function taskStatus(array $params)
     {
         return $this->get('task/status', $params);
+    }
+
+    /**
+     * 查询药品标品审核结果
+     *
+     * @param array $params
+     * @return mixed
+     */
+    public function auditResult(array $params)
+    {
+        return $this->get('medicine/audit/result', $params);
+    }
+
+    /**
+     * 导入标品主图优化图片
+     *
+     * @param array $params
+     * @return mixed
+     */
+    public function importUpcImageData(array $params)
+    {
+        return $this->post('medicine/importUpcImageData', $params);
+    }
+
+    /**
+     * 批量更新药品仓库库存
+     *
+     * @param array $params
+     * @return mixed
+     */
+    public function warehouseStock(array $params)
+    {
+        return $this->post('medicine/warehouse/stock', $params);
     }
 }

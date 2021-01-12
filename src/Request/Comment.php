@@ -2,15 +2,13 @@
 
 namespace Abbotton\MeituanTakeaway\Request;
 
-use Psr\Http\Message\StreamInterface;
-
 class Comment extends BaseRequest
 {
     /**
      * 根据门店id批量查询评价信息
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function query(array $params)
     {
@@ -21,7 +19,7 @@ class Comment extends BaseRequest
      * 根据评价id添加商家回复
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function addReply(array $params)
     {
@@ -32,7 +30,7 @@ class Comment extends BaseRequest
      * 通过门店ID获取当前门店评分
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function score(array $params)
     {

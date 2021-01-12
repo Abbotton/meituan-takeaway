@@ -2,15 +2,13 @@
 
 namespace Abbotton\MeituanTakeaway\Request;
 
-use Psr\Http\Message\StreamInterface;
-
 class Order extends BaseRequest
 {
     /**
      * 设订单为商家已收到
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function received(array $params)
     {
@@ -21,7 +19,7 @@ class Order extends BaseRequest
      * 商家确认订单
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function confirm(array $params)
     {
@@ -32,7 +30,7 @@ class Order extends BaseRequest
      * 商家取消订单
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function cancel(array $params)
     {
@@ -43,7 +41,7 @@ class Order extends BaseRequest
      * 自配订单配送中
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function delivering(array $params)
     {
@@ -54,7 +52,7 @@ class Order extends BaseRequest
      * 自配订单已送达
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function arrived(array $params)
     {
@@ -65,7 +63,7 @@ class Order extends BaseRequest
      * 订单确认退款请求
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function refundAgree(array $params)
     {
@@ -76,7 +74,7 @@ class Order extends BaseRequest
      * 驳回订单退款申请
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function refundReject(array $params)
     {
@@ -87,7 +85,7 @@ class Order extends BaseRequest
      * 查询订单状态
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function viewStatus(array $params)
     {
@@ -98,7 +96,7 @@ class Order extends BaseRequest
      * 获取订单详细信息
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function getOrderDetail(array $params)
     {
@@ -109,7 +107,7 @@ class Order extends BaseRequest
      * 下发美团配送订单
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function logisticsPush(array $params)
     {
@@ -120,7 +118,7 @@ class Order extends BaseRequest
      * 取消美团配送订单
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function logisticsCancel(array $params)
     {
@@ -131,7 +129,7 @@ class Order extends BaseRequest
      * 获取订单配送状态
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function logisticsStatus(array $params)
     {
@@ -142,7 +140,7 @@ class Order extends BaseRequest
      * 获取当日最新订单流水号
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function getOrderDaySeq(array $params)
     {
@@ -153,7 +151,7 @@ class Order extends BaseRequest
      * 根据流水号获取订单ID
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function getOrderIdByDaySeq(array $params)
     {
@@ -164,7 +162,7 @@ class Order extends BaseRequest
      * 批量查询众包配送费
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function zhongBaoShippingFee(array $params)
     {
@@ -175,7 +173,7 @@ class Order extends BaseRequest
      * 众包发配送
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function zhongBaoDispatch(array $params)
     {
@@ -186,7 +184,7 @@ class Order extends BaseRequest
      * 众包配送单追加小费
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function zhongBaoUpdateTip(array $params)
     {
@@ -197,7 +195,7 @@ class Order extends BaseRequest
      * 查询可被部分退款的商品详情
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function getPartRefundFoods(array $params)
     {
@@ -208,7 +206,7 @@ class Order extends BaseRequest
      * 发起部分退款
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function applyPartRefund(array $params)
     {
@@ -219,7 +217,7 @@ class Order extends BaseRequest
      * 催单回复接口
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function remindReply(array $params)
     {
@@ -230,7 +228,7 @@ class Order extends BaseRequest
      * 商家确认已完成拣货
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function preparationMealComplete(array $params)
     {
@@ -241,7 +239,7 @@ class Order extends BaseRequest
      * 商家获取备货时长
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function getPreparationMealTime(array $params)
     {
@@ -252,7 +250,7 @@ class Order extends BaseRequest
      * 拉取用户真实手机号
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function batchPullPhoneNumber(array $params)
     {
@@ -263,7 +261,7 @@ class Order extends BaseRequest
      * 查询可申请货损赔付的订单
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function getSupportedCompensation(array $params)
     {
@@ -274,7 +272,7 @@ class Order extends BaseRequest
      * 申请货损赔付
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function applyCompensation(array $params)
     {
@@ -285,7 +283,7 @@ class Order extends BaseRequest
      * 查询货损赔付结果
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function getCompensationResult(array $params)
     {
@@ -296,7 +294,7 @@ class Order extends BaseRequest
      * 专快混配送转为商家自配送
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function logisticsChangePoiSelf(array $params)
     {
@@ -307,7 +305,7 @@ class Order extends BaseRequest
      * 批量拉取异常订单
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function batchFetchAbnormalOrder(array $params)
     {
@@ -318,7 +316,7 @@ class Order extends BaseRequest
      * 获取订单退款记录
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function ecommerceOrderGetOrderRefundDetail(array $params)
     {
@@ -329,7 +327,7 @@ class Order extends BaseRequest
      * 查询订单中的活动信息
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function ecommerceOrderGetOrderActDetail(array $params)
     {
@@ -340,7 +338,7 @@ class Order extends BaseRequest
      * 根据流水号获取订单ID
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function ecommerceOrderGetOrderIdByDaySeq(array $params)
     {
@@ -351,7 +349,7 @@ class Order extends BaseRequest
      * 自配送商家同步配送信息
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function ecommerceOrderLogisticsSync(array $params)
     {
@@ -362,7 +360,7 @@ class Order extends BaseRequest
      * 快递配送商家同步配送信息接口
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function ecommerceOrderLogisticsBtocSync(array $params)
     {
@@ -373,7 +371,7 @@ class Order extends BaseRequest
      * 批量查询客服赔付商家责任订单信息
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function batchCompensationOrder(array $params)
     {
@@ -384,7 +382,7 @@ class Order extends BaseRequest
      * 拉取骑手真实手机号
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function getRiderInfoPhoneNumber(array $params)
     {
@@ -395,10 +393,43 @@ class Order extends BaseRequest
      * 售后审查接口
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function ecommerceOrderReviewAfterSales(array $params)
     {
         return $this->get('ecommerce/order/reviewAfterSales', $params);
+    }
+
+    /**
+     * 获取取消跑腿配送原因列表
+     *
+     * @param array $params
+     * @return string
+     */
+    public function getCancelDeliveryReason(array $params)
+    {
+        return $this->get('order/getCancelDeliveryReason', $params);
+    }
+
+    /**
+     * 取消跑腿配送
+     *
+     * @param array $params
+     * @return string
+     */
+    public function cancelLogisticsByWmOrderId(array $params)
+    {
+        return $this->post('order/cancelLogisticsByWmOrderId', $params);
+    }
+
+    /**
+     * 查询门店售后订单列表
+     *
+     * @param array $params
+     * @return string
+     */
+    public function getAfterSaleOrders(array $params)
+    {
+        return $this->get('ecommerce/order/getAfterSaleOrders', $params);
     }
 }

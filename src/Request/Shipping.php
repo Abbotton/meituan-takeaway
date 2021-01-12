@@ -2,8 +2,6 @@
 
 namespace Abbotton\MeituanTakeaway\Request;
 
-use Psr\Http\Message\StreamInterface;
-
 class Shipping extends BaseRequest
 {
     
@@ -11,7 +9,7 @@ class Shipping extends BaseRequest
      * 创建或更新门店配送范围
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function save(array $params)
     {
@@ -22,7 +20,7 @@ class Shipping extends BaseRequest
      * 获取门店配送范围自配送
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function list(array $params)
     {
@@ -33,7 +31,7 @@ class Shipping extends BaseRequest
      * 批量创建或更新配送范围
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function batchsave(array $params)
     {
@@ -44,7 +42,7 @@ class Shipping extends BaseRequest
      * 获取门店配送范围混合送
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function fetch(array $params)
     {
@@ -55,7 +53,7 @@ class Shipping extends BaseRequest
      * 删除配送范围
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function delete(array $params)
     {
@@ -66,7 +64,7 @@ class Shipping extends BaseRequest
      * 新增或更新特殊时段配送范围
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function specSave(array $params)
     {

@@ -2,15 +2,13 @@
 
 namespace Abbotton\MeituanTakeaway\Request;
 
-use Psr\Http\Message\StreamInterface;
-
 class Poi extends BaseRequest
 {
     /**
      * 创建或更新门店信息
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function save(array $params)
     {
@@ -21,7 +19,7 @@ class Poi extends BaseRequest
      * 获取门店ID
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function getIds()
     {
@@ -32,7 +30,7 @@ class Poi extends BaseRequest
      * 批量获取门店详细信息
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function mget(array $params)
     {
@@ -43,7 +41,7 @@ class Poi extends BaseRequest
      * 门店设置为营业状态
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function open(array $params)
     {
@@ -54,7 +52,7 @@ class Poi extends BaseRequest
      * 门店设置为休息状态
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function close(array $params)
     {
@@ -65,7 +63,7 @@ class Poi extends BaseRequest
      * 门店设置为下线状态
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function offline(array $params)
     {
@@ -76,7 +74,7 @@ class Poi extends BaseRequest
      * 门店设置为上线状态
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function online(array $params)
     {
@@ -87,7 +85,7 @@ class Poi extends BaseRequest
      * 更改门店公告信息
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function updatePromoteInfo(array $params)
     {
@@ -98,7 +96,7 @@ class Poi extends BaseRequest
      * 获取门店品类列表
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function tagList(array $params)
     {
@@ -109,7 +107,7 @@ class Poi extends BaseRequest
      * 更新门店营业时间
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function shippingTimeUpdate(array $params)
     {
@@ -120,7 +118,7 @@ class Poi extends BaseRequest
      * 查询门店是否延迟发配送
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function isDelayPush(array $params)
     {
@@ -131,7 +129,7 @@ class Poi extends BaseRequest
      * 设置门店延迟发配送时间
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function setDelayPush(array $params)
     {
@@ -142,10 +140,21 @@ class Poi extends BaseRequest
      * 获取三方门店映射信息
      *
      * @param array $params
-     * @return StreamInterface
+     * @return string
      */
     public function boundList(array $params)
     {
         return $this->post('ecommerce/poi/bound/list', $params);
+    }
+
+    /**
+     * 已授权商家账号所关联门店的绑定与解绑
+     *
+     * @param array $params
+     * @return string
+     */
+    public function bindAppByAccount(array $params)
+    {
+        return $this->post('ecommerce/poi/bind/app/by/account', $params);
     }
 }
