@@ -18,7 +18,6 @@ $config = [
     'app_id' => 'xxx',
     'app_secret' => 'xxx',
     'request_url' => '', // 默认 `https://waimaiopen.meituan.com/api/v1/`
-    'log_path' => '/path/of/log'
 ];
 
 $app = new Application($config);
