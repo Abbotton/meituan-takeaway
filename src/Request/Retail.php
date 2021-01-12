@@ -5,7 +5,7 @@ namespace Abbotton\MeituanTakeaway\Request;
 class Retail extends BaseRequest
 {
     /**
-     * 创建/更新商品分类
+     * 创建/更新商品分类.
      *
      * @param array $params
      * @return string
@@ -14,9 +14,9 @@ class Retail extends BaseRequest
     {
         return $this->post('retailCat/update', $params);
     }
-    
+
     /**
-     * 删除商品分类
+     * 删除商品分类.
      *
      * @param array $params
      * @return string
@@ -25,9 +25,9 @@ class Retail extends BaseRequest
     {
         return $this->post('retailCat/delete', $params);
     }
-    
+
     /**
-     * 查询门店商品分类列表
+     * 查询门店商品分类列表.
      *
      * @param array $params
      * @return string
@@ -36,9 +36,9 @@ class Retail extends BaseRequest
     {
         return $this->get('retailCat/list', $params);
     }
-    
+
     /**
-     * 创建/更新商品[支持商品多规格,不含删除逻辑]
+     * 创建/更新商品[支持商品多规格,不含删除逻辑].
      *
      * @param array $params
      * @return string
@@ -47,9 +47,9 @@ class Retail extends BaseRequest
     {
         return $this->post('retail/initdata', $params);
     }
-    
+
     /**
-     * 批量创建/更新商品[支持商品多规格,不含删除逻辑]
+     * 批量创建/更新商品[支持商品多规格,不含删除逻辑].
      *
      * @param array $params
      * @return string
@@ -58,7 +58,7 @@ class Retail extends BaseRequest
     {
         return $this->post('retail/batchinitdata', $params);
     }
-    
+
     /**
      * 按 UPC/EAN 批量创建/更新标品
      *
@@ -69,9 +69,9 @@ class Retail extends BaseRequest
     {
         return $this->post('retail/batchinitdatabyupc', $params);
     }
-    
+
     /**
-     * 批量创建/更新商品信息至多店
+     * 批量创建/更新商品信息至多店.
      *
      * @param array $params
      * @return string
@@ -80,9 +80,9 @@ class Retail extends BaseRequest
     {
         return $this->post('retail/multipois/batchinitdata', $params);
     }
-    
+
     /**
-     * 查询多店同步任务的进程
+     * 查询多店同步任务的进程.
      *
      * @param array $params
      * @return string
@@ -91,7 +91,7 @@ class Retail extends BaseRequest
     {
         return $this->get('task/status', $params);
     }
-    
+
     /**
      * 批量更新售卖（上下架）状态
      *
@@ -102,9 +102,9 @@ class Retail extends BaseRequest
     {
         return $this->post('retail/sellStatus', $params);
     }
-    
+
     /**
-     * 创建/更新SKU信息
+     * 创建/更新SKU信息.
      *
      * @param array $params
      * @return string
@@ -113,7 +113,7 @@ class Retail extends BaseRequest
     {
         return $this->post('retail/sku/save', $params);
     }
-    
+
     /**
      * 批量更新SKU价格
      *
@@ -124,9 +124,9 @@ class Retail extends BaseRequest
     {
         return $this->post('retail/sku/price', $params);
     }
-    
+
     /**
-     * 批量更新SKU库存
+     * 批量更新SKU库存.
      *
      * @param array $params
      * @return string
@@ -135,9 +135,9 @@ class Retail extends BaseRequest
     {
         return $this->post('retail/sku/stock', $params);
     }
-    
+
     /**
-     * 查询门店商品列表
+     * 查询门店商品列表.
      *
      * @param array $params
      * @return string
@@ -146,9 +146,9 @@ class Retail extends BaseRequest
     {
         return $this->get('retail/list', $params);
     }
-    
+
     /**
-     * 查询商品详情
+     * 查询商品详情.
      *
      * @param array $params
      * @return string
@@ -157,9 +157,9 @@ class Retail extends BaseRequest
     {
         return $this->get('retail/get', $params);
     }
-    
+
     /**
-     * 批量绑定商品属性
+     * 批量绑定商品属性.
      *
      * @param array $params
      * @return string
@@ -168,9 +168,9 @@ class Retail extends BaseRequest
     {
         return $this->post('retail/bind/property', $params);
     }
-    
+
     /**
-     * 创建/更新商品[支持商品多规格,不含删除逻辑]
+     * 创建/更新商品[支持商品多规格,不含删除逻辑].
      *
      * @param array $params
      * @return string
@@ -179,7 +179,7 @@ class Retail extends BaseRequest
     {
         return $this->get('retail/property/list', $params);
     }
-    
+
     /**
      * 删除商品
      *
@@ -190,9 +190,9 @@ class Retail extends BaseRequest
     {
         return $this->post('retail/delete', $params);
     }
-    
+
     /**
-     * 删除SKU信息
+     * 删除SKU信息.
      *
      * @param array $params
      * @return string
@@ -201,7 +201,7 @@ class Retail extends BaseRequest
     {
         return $this->post('retail/sku/delete', $params);
     }
-    
+
     /**
      * 批量删除商品分类及商品
      *
@@ -212,7 +212,7 @@ class Retail extends BaseRequest
     {
         return $this->post('retailCat/batchdelete/catandretail', $params);
     }
-    
+
     /**
      * 根据原商品编码更换新商品编码
      *
@@ -223,7 +223,7 @@ class Retail extends BaseRequest
     {
         return $this->post('retail/updateAppFoodCodeByOrigin', $params);
     }
-    
+
     /**
      * 根据商品名称和规格名称更换新的商品编码
      *
@@ -234,9 +234,9 @@ class Retail extends BaseRequest
     {
         return $this->post('retail/updateAppFoodCodeByNameAndSpec', $params);
     }
-    
+
     /**
-     * 获取美团后台商品类目（末级类目id）
+     * 获取美团后台商品类目（末级类目id）.
      *
      * @param array $params
      * @return string
@@ -245,9 +245,9 @@ class Retail extends BaseRequest
     {
         return $this->get('retail/getSpTagIds', $params);
     }
-    
+
     /**
-     * 根据末级类目id获取类目属性列表
+     * 根据末级类目id获取类目属性列表.
      *
      * @param array $params
      * @return string
@@ -256,9 +256,9 @@ class Retail extends BaseRequest
     {
         return $this->get('gw/category/attr/list', $params);
     }
-    
+
     /**
-     * 查询特殊属性的属性值列表
+     * 查询特殊属性的属性值列表.
      *
      * @param array $params
      * @return string
@@ -267,9 +267,9 @@ class Retail extends BaseRequest
     {
         return $this->get('gw/category/attr/value/list', $params);
     }
-    
+
     /**
-     * 批量上传商品视频
+     * 批量上传商品视频.
      *
      * @param array $params
      * @return string
@@ -278,9 +278,9 @@ class Retail extends BaseRequest
     {
         return $this->post('ecommerce/video/upload', $params);
     }
-    
+
     /**
-     * 查询门店商品视频
+     * 查询门店商品视频.
      *
      * @param array $params
      * @return string
@@ -289,9 +289,9 @@ class Retail extends BaseRequest
     {
         return $this->get('gw/video/list', $params);
     }
-    
+
     /**
-     * 删除商品视频
+     * 删除商品视频.
      *
      * @param array $params
      * @return string
@@ -300,9 +300,9 @@ class Retail extends BaseRequest
     {
         return $this->post('gw/video/delete', $params);
     }
-    
+
     /**
-     * 更新商品视频关联关系
+     * 更新商品视频关联关系.
      *
      * @param array $params
      * @return string
@@ -313,7 +313,7 @@ class Retail extends BaseRequest
     }
 
     /**
-     * 批量更新商品信息至多店
+     * 批量更新商品信息至多店.
      *
      * @param array $params
      * @return string
@@ -324,7 +324,7 @@ class Retail extends BaseRequest
     }
 
     /**
-     * 批量创建商品信息至多店
+     * 批量创建商品信息至多店.
      *
      * @param array $params
      * @return string
@@ -335,7 +335,7 @@ class Retail extends BaseRequest
     }
 
     /**
-     * 查询门店商品审核状态信息
+     * 查询门店商品审核状态信息.
      *
      * @param array $params
      * @return string
@@ -346,7 +346,7 @@ class Retail extends BaseRequest
     }
 
     /**
-     * 根据商品UPC或商品名称查询平台推荐类目信息
+     * 根据商品UPC或商品名称查询平台推荐类目信息.
      *
      * @param array $params
      * @return string

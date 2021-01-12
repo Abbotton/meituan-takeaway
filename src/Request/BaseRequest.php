@@ -18,16 +18,16 @@ class BaseRequest
 
     protected function get($action, array $options = [])
     {
-        $params_head = array(
+        $params_head = [
             'timestamp' => time(),
             'app_id' => $this->config->app_id,
-        );
+        ];
 
         $options = array_merge($params_head, $options);
-        $sig = $this->generateSignature($this->config->request_url . $action, $options);
+        $sig = $this->generateSignature($this->config->request_url.$action, $options);
         $options['sig'] = $sig;
 
-        $url = $this->config->request_url . $action;
+        $url = $this->config->request_url.$action;
 
         return $this->request('GET', $url, ['query' => $options]);
     }
@@ -35,20 +35,20 @@ class BaseRequest
     private function generateSignature($action, $params)
     {
         $params = $this->concatParams($params);
-        $str = $action . '?' . $params . $this->config->app_secret;
+        $str = $action.'?'.$params.$this->config->app_secret;
 
         return md5($str);
     }
 
     private function concatParams($params)
     {
-        if(isset($params['img_data'])) {
+        if (isset($params['img_data'])) {
             unset($params['img_data']);
         }
         ksort($params);
-        $pairs = array();
+        $pairs = [];
         foreach ($params as $key => $val) {
-            array_push($pairs, $key . '=' . $val);
+            array_push($pairs, $key.'='.$val);
         }
 
         return join('&', $pairs);
@@ -64,13 +64,13 @@ class BaseRequest
 
     protected function post($action, array $params = [])
     {
-        $params_head = array(
+        $params_head = [
             'timestamp' => time(),
             'app_id' => $this->config->app_id,
-        );
+        ];
 
         $params = array_merge($params_head, $params);
-        $url = $this->config->request_url . $action;
+        $url = $this->config->request_url.$action;
         $sig = $this->generateSignature($url, $params);
         $params['sig'] = $sig;
 

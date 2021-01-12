@@ -11,7 +11,7 @@ class TestCase extends BaseTestCase
     {
         $config = [
             'app_id' => 'foo',
-            'app_secret' => 'bar'
+            'app_secret' => 'bar',
         ];
 
         return new Application($config);

@@ -5,7 +5,7 @@ namespace Abbotton\MeituanTakeaway\Request;
 class Image extends BaseRequest
 {
     /**
-     * 图片上传API
+     * 图片上传API.
      *
      * @param array $params
      * @return string
