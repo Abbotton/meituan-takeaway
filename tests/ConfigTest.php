@@ -20,7 +20,7 @@ class ConfigTest extends TestCase
     {
         try {
             $config = [
-                'app_secret' => 'bar'
+                'app_secret' => 'bar',
             ];
             new Config($config);
         } catch (\Exception $e) {
@@ -44,7 +44,7 @@ class ConfigTest extends TestCase
     {
         $config = [
             'app_id' => 'foo',
-            'app_secret' => 'bar'
+            'app_secret' => 'bar',
         ];
         $instance = new Config($config);
         $this->assertInstanceOf(Config::class, $instance);

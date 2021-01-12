@@ -5,7 +5,7 @@ namespace Abbotton\MeituanTakeaway\Request;
 class GroupBuy extends BaseRequest
 {
     /**
-     * 同步配送信息接口
+     * 同步配送信息接口.
      *
      * @param array $params
      * @return string
@@ -16,7 +16,7 @@ class GroupBuy extends BaseRequest
     }
 
     /**
-     * 查询订单退款信息接口
+     * 查询订单退款信息接口.
      *
      * @param array $params
      * @return string
@@ -27,7 +27,7 @@ class GroupBuy extends BaseRequest
     }
 
     /**
-     * 批量查询订单退款信息接口
+     * 批量查询订单退款信息接口.
      *
      * @param array $params
      * @return string
@@ -38,7 +38,7 @@ class GroupBuy extends BaseRequest
     }
 
     /**
-     * 批量查询订单状态信息
+     * 批量查询订单状态信息.
      *
      * @param array $params
      * @return string
@@ -49,7 +49,7 @@ class GroupBuy extends BaseRequest
     }
 
     /**
-     * 查询订单详情信息
+     * 查询订单详情信息.
      *
      * @param array $params
      * @return string
@@ -60,7 +60,7 @@ class GroupBuy extends BaseRequest
     }
 
     /**
-     * 查询门店订单列表信息
+     * 查询门店订单列表信息.
      *
      * @param array $params
      * @return string

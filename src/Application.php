@@ -15,7 +15,7 @@ use Exception;
 use GuzzleHttp\Client;
 
 /**
- * Class Application
+ * Class Application.
  *
  * @property Comment $comment
  * @property Act $act
@@ -26,13 +26,11 @@ use GuzzleHttp\Client;
  * @property Retail $retail
  * @property Shipping $shipping
  * @property GroupBuy $groupBuy
- *
- * @package Abbotton\MeituanTakeaway
  */
 class Application
 {
     private $config;
-    
+
     public function __construct($config)
     {
         $this->config = new Config($config);
@@ -48,15 +46,15 @@ class Application
 
     public function __get($name)
     {
-        if (!isset($this->$name)) {
+        if (! isset($this->$name)) {
             $class_name = ucfirst($name);
             $application = "\\Abbotton\\MeituanTakeaway\\Request\\{$class_name}";
-            if (!class_exists($application)) {
-                throw new Exception($class_name . '不存在');
+            if (! class_exists($application)) {
+                throw new Exception($class_name.'不存在');
             }
             $this->$name = new $application($this->config, $this->client);
         }
-        
+
         return $this->$name;
     }
 }

@@ -22,7 +22,7 @@ class RequestTest extends TestCase
             $reflectionClass = new \ReflectionClass($app->$class);
             $methods = $reflectionClass->getMethods();
             foreach ($methods as &$method) {
-                if ($method->class == 'Abbotton\\MeituanTakeaway\\Request\\' . ucfirst($class)) {
+                if ($method->class == 'Abbotton\\MeituanTakeaway\\Request\\'.ucfirst($class)) {
                     $response = new Response(200, [], $responseJson);
                     $mock->append($response);
                     $methodName = $method->getName();
