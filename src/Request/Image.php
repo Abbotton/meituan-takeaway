@@ -7,9 +7,10 @@ use Psr\Http\Message\StreamInterface;
 class Image extends BaseRequest
 {
     /**
-     * 图片上传API
+     * 图片上传API.
      *
      * @param array $params
+     *
      * @return StreamInterface
      */
     public function upload(array $params)
