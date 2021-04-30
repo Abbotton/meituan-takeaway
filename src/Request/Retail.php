@@ -355,6 +355,7 @@ class Retail extends BaseRequest
     {
         return $this->post('retail/recommend/tag', $params);
     }
+
     /**
      * 查询门店品牌商品推广开关状态.
      *
