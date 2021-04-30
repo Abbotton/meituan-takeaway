@@ -525,4 +525,15 @@ class Act extends BaseRequest
     {
         return $this->post('act/deleteActsByProducts', $params);
     }
+
+    /**
+     * 批量查询门店商品是否可以改价.
+     *
+     * @param array $params
+     * @return mixed
+     */
+    public function modifyPrice(array $params)
+    {
+        return $this->get('act/can/modify/price', $params);
+    }
 }

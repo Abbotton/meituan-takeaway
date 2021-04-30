@@ -69,4 +69,26 @@ class Shipping extends BaseRequest
     {
         return $this->post('shipping/spec/save', $params);
     }
+
+    /**
+     * 查询门店配送范围（企客专用）.
+     *
+     * @param array $params
+     * @return mixed
+     */
+    public function corporateList(array $params)
+    {
+        return $this->get('shipping/corporate/list', $params);
+    }
+
+    /**
+     * 批量创建/更新门店配送范围（企客专用）.
+     *
+     * @param array $params
+     * @return mixed
+     */
+    public function corporateBatchSave(array $params)
+    {
+        return $this->post('shipping/corporate/batchsave', $params);
+    }
 }

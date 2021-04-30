@@ -355,4 +355,36 @@ class Retail extends BaseRequest
     {
         return $this->post('retail/recommend/tag', $params);
     }
+    /**
+     * 查询门店品牌商品推广开关状态.
+     *
+     * @param array $params
+     * @return mixed
+     */
+    public function promotionSwitchStatus(array $params)
+    {
+        return $this->get('retail/brandProduct/promotionSwitch/status', $params);
+    }
+
+    /**
+     * 更新门店品牌商品推广开关状态.
+     *
+     * @param array $params
+     * @return mixed
+     */
+    public function promotionSwitchUpdate(array $params)
+    {
+        return $this->post('retail/brandProduct/promotionSwitch/update', $params);
+    }
+
+    /**
+     * 查询门店待推广品牌商品列表.
+     *
+     * @param array $params
+     * @return mixed
+     */
+    public function promotionList(array $params)
+    {
+        return $this->get('retail/brandProduct/promotion/list', $params);
+    }
 }

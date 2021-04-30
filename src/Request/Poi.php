@@ -157,4 +157,70 @@ class Poi extends BaseRequest
     {
         return $this->post('ecommerce/poi/bind/app/by/account', $params);
     }
+
+    /**
+     * 批量创建/更新单店.
+     *
+     * @param array $params
+     * @return mixed
+     */
+    public function settleSingleSave(array $params)
+    {
+        return $this->post('ecommerce/poi/settle/single/save', $params);
+    }
+
+    /**
+     * 批量创建/更新连锁门店.
+     *
+     * @param array $params
+     * @return mixed
+     */
+    public function settleMultiSave(array $params)
+    {
+        return $this->post('ecommerce/poi/settle/multi/sav', $params);
+    }
+
+    /**
+     * 批量查询门店审核状态.
+     *
+     * @param array $params
+     * @return mixed
+     */
+    public function settleAuditList(array $params)
+    {
+        return $this->get('"ecommerce/poi/settle/audit/list', $params);
+    }
+
+    /**
+     * 批量提交门店审核.
+     *
+     * @param array $params
+     * @return mixed
+     */
+    public function settleAuditSubmit(array $params)
+    {
+        return $this->post('ecommerce/poi/settle/audit/submit', $params);
+    }
+
+    /**
+     * 查询连锁门店结算信息.
+     *
+     * @param array $params
+     * @return mixed
+     */
+    public function settleSettlementList(array $params)
+    {
+        return $this->get('ecommerce/poi/settle/settlement/list', $params);
+    }
+
+    /**
+     * 查询门店经营品类列表.
+     *
+     * @param array $params
+     * @return mixed
+     */
+    public function settleCategoryList(array $params)
+    {
+        return $this->get('ecommerce/poi/settle/category/list', $params);
+    }
 }

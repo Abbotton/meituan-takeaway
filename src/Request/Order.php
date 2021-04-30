@@ -432,4 +432,15 @@ class Order extends BaseRequest
     {
         return $this->get('ecommerce/order/getAfterSaleOrders', $params);
     }
+
+    /**
+     * 按克重退差价的金额预览.
+     *
+     * @param array $params
+     * @return string
+     */
+    public function getUnitPartRefundPreview(array $params)
+    {
+        return $this->get('ecommerce/order/getUnitPartRefundPreview', $params);
+    }
 }
