@@ -223,4 +223,25 @@ class Poi extends BaseRequest
     {
         return $this->get('ecommerce/poi/settle/category/list', $params);
     }
+
+    /**
+     * 获取应用已绑定店铺ID列表.
+     *
+     * @return mixed
+     */
+    public function getPoiIds()
+    {
+        return $this->get('gw/poi/getPoiIds');
+    }
+
+    /**
+     * 查询店铺详情.
+     *
+     * @param array $params
+     * @return mixed
+     */
+    public function detail(array $params)
+    {
+        return $this->get('gw/poi/detail', $params);
+    }
 }
