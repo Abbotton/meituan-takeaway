@@ -5,6 +5,7 @@ namespace Abbotton\MeituanTakeaway;
 use Abbotton\MeituanTakeaway\Request\Act;
 use Abbotton\MeituanTakeaway\Request\Comment;
 use Abbotton\MeituanTakeaway\Request\GroupBuy;
+use Abbotton\MeituanTakeaway\Request\Im;
 use Abbotton\MeituanTakeaway\Request\Image;
 use Abbotton\MeituanTakeaway\Request\Medicine;
 use Abbotton\MeituanTakeaway\Request\Order;
@@ -26,6 +27,7 @@ use GuzzleHttp\Client;
  * @property Retail $retail
  * @property Shipping $shipping
  * @property GroupBuy $groupBuy
+ * @property Im $im
  */
 class Application
 {
