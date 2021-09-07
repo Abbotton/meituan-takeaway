@@ -595,7 +595,7 @@ class Order extends BaseRequest
      */
     public function batchEncrypt(array $params)
     {
-        return $this->post('gw/order/batchDecrypt', $params);
+        return $this->post('gw/order/batchEncrypt', $params);
     }
 
     /**
