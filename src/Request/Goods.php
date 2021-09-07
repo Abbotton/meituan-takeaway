@@ -85,7 +85,7 @@ class Goods extends BaseRequest
      * @param array $params
      * @return string
      */
-    public function list(array $params)
+    public function goodsList(array $params)
     {
         return $this->post('gw/goods/list', $params);
     }

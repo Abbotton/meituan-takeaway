@@ -21,7 +21,7 @@ class Shipping extends BaseRequest
      * @param array $params
      * @return string
      */
-    public function list(array $params)
+    public function lshippingList(array $params)
     {
         return $this->get('shipping/list', $params);
     }

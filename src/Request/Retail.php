@@ -131,7 +131,7 @@ class Retail extends BaseRequest
      * @param array $params
      * @return string
      */
-    public function list(array $params)
+    public function retailList(array $params)
     {
         return $this->get('retail/list', $params);
     }

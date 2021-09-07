@@ -65,7 +65,7 @@ class GroupBuy extends BaseRequest
      * @param array $params
      * @return string
      */
-    public function list(array $params)
+    public function orderList(array $params)
     {
         return $this->post('gw/order/list', $params);
     }
