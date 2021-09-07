@@ -29,7 +29,6 @@ use GuzzleHttp\Client;
  * @property Poi $poi
  * @property Retail $retail
  * @property Shipping $shipping
- * @property GroupBuy $groupBuy
  * @property Im $im
  * @property Goods $goods
  * @property Delivery $delivery
