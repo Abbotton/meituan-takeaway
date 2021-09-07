@@ -91,4 +91,15 @@ class Shipping extends BaseRequest
     {
         return $this->post('shipping/corporate/batchsave', $params);
     }
+
+    /**
+     * 重置门店配送范围（自配）.
+     *
+     * @param array $params
+     * @return mixed
+     */
+    public function resetSelfDeliveryArea(array $params)
+    {
+        return $this->post('shipping/resetSelfDeliveryArea', $params);
+    }
 }

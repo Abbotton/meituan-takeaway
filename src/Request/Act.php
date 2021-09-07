@@ -5,54 +5,6 @@ namespace Abbotton\MeituanTakeaway\Request;
 class Act extends BaseRequest
 {
     /**
-     * 批量创建/更新第二份半价商品（本接口预计2020年2月26日下线，建议接入“第N件优惠”活动接口。）.
-     *
-     * @param array $params
-     * @return string
-     * @deprecated
-     */
-    public function secondHalfBatchSave(array $params)
-    {
-        return $this->post('act/second/half/batchsave', $params);
-    }
-
-    /**
-     * 批量删除第二份半价商品（本接口预计2020年2月26日下线，建议接入“第N件优惠”活动接口。）.
-     *
-     * @param array $params
-     * @return string
-     * @deprecated
-     */
-    public function secondHalfDelete(array $params)
-    {
-        return $this->post('act/second/half/delete', $params);
-    }
-
-    /**
-     * 批量修改第二份半价商品当日活动库存（本接口预计2020年2月26日下线，建议接入“第N件优惠”活动接口。）.
-     *
-     * @param array $params
-     * @return string
-     * @deprecated
-     */
-    public function secondHalfStock(array $params)
-    {
-        return $this->post('act/second/half/stock', $params);
-    }
-
-    /**
-     * 批量查询门店第二份半价商品（本接口预计2020年2月26日下线，建议接入“第N件优惠”活动接口。）.
-     *
-     * @param array $params
-     * @return string
-     * @deprecated
-     */
-    public function secondHalfList(array $params)
-    {
-        return $this->get('act/second/half/list', $params);
-    }
-
-    /**
      * 批量创建买赠活动.
      *
      * @param array $params

@@ -71,17 +71,6 @@ class Retail extends BaseRequest
     }
 
     /**
-     * 批量创建/更新商品信息至多店.
-     *
-     * @param array $params
-     * @return string
-     */
-    public function multiBatchInitData(array $params)
-    {
-        return $this->post('retail/multipois/batchinitdata', $params);
-    }
-
-    /**
      * 查询多店同步任务的进程.
      *
      * @param array $params
@@ -387,5 +376,38 @@ class Retail extends BaseRequest
     public function promotionList(array $params)
     {
         return $this->get('retail/brandProduct/promotion/list', $params);
+    }
+
+    /**
+     * 批量更新商品分类顺序及分类下商品智能排序开关.
+     *
+     * @param  array  $params
+     * @return mixed
+     */
+    public function retailCatSetSequence(array $params)
+    {
+        return $this->post('retailCat/setSequence', $params);
+    }
+
+    /**
+     * 批量更新商品顺序.
+     *
+     * @param  array  $params
+     * @return mixed
+     */
+    public function retailSetSequence(array $params)
+    {
+        return $this->post('retail/setSequence', $params);
+    }
+
+    /**
+     * 批量根据sku_id查询app_spu_code列表.
+     *
+     * @param  array  $params
+     * @return mixed
+     */
+    public function batchGetAppSpuCodesBySkuIds(array $params)
+    {
+        return $this->post('gw/retail/batchGetAppSpuCodesBySkuIds', $params);
     }
 }

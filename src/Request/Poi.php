@@ -104,17 +104,6 @@ class Poi extends BaseRequest
     }
 
     /**
-     * 更新门店营业时间.
-     *
-     * @param array $params
-     * @return string
-     */
-    public function shippingTimeUpdate(array $params)
-    {
-        return $this->post('shippingtime/update', $params);
-    }
-
-    /**
      * 查询门店是否延迟发配送
      *
      * @param array $params
@@ -177,7 +166,7 @@ class Poi extends BaseRequest
      */
     public function settleMultiSave(array $params)
     {
-        return $this->post('ecommerce/poi/settle/multi/sav', $params);
+        return $this->post('ecommerce/poi/settle/multi/save', $params);
     }
 
     /**
@@ -188,7 +177,7 @@ class Poi extends BaseRequest
      */
     public function settleAuditList(array $params)
     {
-        return $this->get('"ecommerce/poi/settle/audit/list', $params);
+        return $this->get('ecommerce/poi/settle/audit/list', $params);
     }
 
     /**
@@ -243,5 +232,49 @@ class Poi extends BaseRequest
     public function detail(array $params)
     {
         return $this->get('gw/poi/detail', $params);
+    }
+
+    /**
+     * 更新门店营业时间.
+     *
+     * @param  array  $params
+     * @return mixed
+     */
+    public function shippingTimeUpdate(array $params)
+    {
+        return $this->post('poi/shippingtime/update', $params);
+    }
+
+    /**
+     * 查询城市信息.
+     *
+     * @param  array  $params
+     * @return mixed
+     */
+    public function cityInfo(array $params)
+    {
+        return $this->get('ecommerce/poi/cityInfo', $params);
+    }
+
+    /**
+     * 查询结算银行信息.
+     *
+     * @param  array  $params
+     * @return mixed
+     */
+    public function settleSettlementBankInfo(array $params)
+    {
+        return $this->get('ecommerce/poi/settle/settlement/bankInfo', $params);
+    }
+
+    /**
+     * 创建/更新连锁门店结算信息.
+     *
+     * @param  array  $params
+     * @return mixed
+     */
+    public function settleSettlementCreate(array $params)
+    {
+        return $this->post('ecommerce/poi/settle/settlement/create', $params);
     }
 }

@@ -5,50 +5,6 @@ namespace Abbotton\MeituanTakeaway\Request;
 class Order extends BaseRequest
 {
     /**
-     * 设订单为商家已收到.
-     *
-     * @param array $params
-     * @return string
-     */
-    public function received(array $params)
-    {
-        return $this->get('order/poi_received', $params);
-    }
-
-    /**
-     * 商家确认订单.
-     *
-     * @param array $params
-     * @return string
-     */
-    public function confirm(array $params)
-    {
-        return $this->get('order/confirm', $params);
-    }
-
-    /**
-     * 商家取消订单.
-     *
-     * @param array $params
-     * @return string
-     */
-    public function cancel(array $params)
-    {
-        return $this->get('order/cancel', $params);
-    }
-
-    /**
-     * 自配订单配送中.
-     *
-     * @param array $params
-     * @return string
-     */
-    public function delivering(array $params)
-    {
-        return $this->get('order/delivering', $params);
-    }
-
-    /**
      * 自配订单已送达.
      *
      * @param array $params
@@ -541,5 +497,137 @@ class Order extends BaseRequest
     public function refundAudit(array $params)
     {
         return $this->post('gw/order/refund/audit', $params);
+    }
+
+    /**
+     * 查询众包配送费与配送费优惠券详情.
+     *
+     * @param  array  $params
+     * @return string
+     */
+    public function logisticsPtPreview(array $params)
+    {
+        return $this->get('order/logistics/pt/preview', $params);
+    }
+
+    /**
+     * 获取跨境订单清关信息.
+     *
+     * @param  array  $params
+     * @return string
+     */
+    public function getCrossBorderDetail(array $params)
+    {
+        return $this->get('ecommerce/order/getCrossBorderDetail', $params);
+    }
+
+    /**
+     * 自配送商家同步预计送达时间接口.
+     *
+     * @param  array  $params
+     * @return string
+     */
+    public function syncEstimateArrivalTime(array $params)
+    {
+        return $this->post('ecommerce/order/syncEstimateArrivalTime', $params);
+    }
+
+    /**
+     * 查询支持的物流公司列表.
+     *
+     * @param  array  $params
+     * @return string
+     */
+    public function logisticsCompanyList(array $params)
+    {
+        return $this->get('gw/logistics/company/list', $params);
+    }
+
+    /**
+     * 查询增量订单列表信息.
+     *
+     * @param  array  $params
+     * @return string
+     */
+    public function orderIncrementList(array $params)
+    {
+        return $this->get('gw/order/increment/list', $params);
+    }
+
+    /**
+     * 批量查询电子面单信息.
+     *
+     * @param  array  $params
+     * @return string
+     */
+    public function logisticsLabelBatchGetInfo(array $params)
+    {
+        return $this->get('gw/logistics/label/batchGetInfo', $params);
+    }
+
+    /**
+     * 创建电子面单.
+     *
+     * @param  array  $params
+     * @return string
+     */
+    public function create(array $params)
+    {
+        return $this->post('gw/logistics/label/create', $params);
+    }
+
+    /**
+     * 批量解密接口.
+     *
+     * @param  array  $params
+     * @return string
+     */
+    public function batchDecrypt(array $params)
+    {
+        return $this->post('gw/order/batchDecrypt', $params);
+    }
+
+    /**
+     * 批量加密接口.
+     *
+     * @param  array  $params
+     * @return string
+     */
+    public function batchEncrypt(array $params)
+    {
+        return $this->post('gw/order/batchDecrypt', $params);
+    }
+
+    /**
+     * 商家开通的物流公司查询.
+     *
+     * @param  array  $params
+     * @return mixed
+     */
+    public function logisticsLabelLogisticsAccountList(array $params)
+    {
+        return $this->get('gw/logistics/label/logisticsAccount/list', $params);
+    }
+
+    /**
+     * 查询自定义打印模板.
+     *
+     * @param  array  $params
+     * @return mixed
+     */
+    public function logisticsLabelPrintTemplateList(array $params)
+    {
+        return $this->get('gw/logistics/label/printTemplate/list', $params);
+    }
+
+    /**
+     * 查询自定义打印模板.
+     *
+     * @param  array  $params
+     * @return mixed
+     */
+    public function logisticsLabelCancel(array $params)
+    {
+        return $this->post('gw/logistics/label/cancel', $params);
     }
 }

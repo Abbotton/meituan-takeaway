@@ -4,6 +4,7 @@ namespace Abbotton\MeituanTakeaway;
 
 use Abbotton\MeituanTakeaway\Request\Act;
 use Abbotton\MeituanTakeaway\Request\Comment;
+use Abbotton\MeituanTakeaway\Request\Delivery;
 use Abbotton\MeituanTakeaway\Request\Goods;
 use Abbotton\MeituanTakeaway\Request\GroupBuy;
 use Abbotton\MeituanTakeaway\Request\Im;
@@ -13,6 +14,7 @@ use Abbotton\MeituanTakeaway\Request\Order;
 use Abbotton\MeituanTakeaway\Request\Poi;
 use Abbotton\MeituanTakeaway\Request\Retail;
 use Abbotton\MeituanTakeaway\Request\Shipping;
+use Abbotton\MeituanTakeaway\Request\Task;
 use Exception;
 use GuzzleHttp\Client;
 
@@ -30,6 +32,8 @@ use GuzzleHttp\Client;
  * @property GroupBuy $groupBuy
  * @property Im $im
  * @property Goods $goods
+ * @property Delivery $delivery
+ * @property Task $task
  */
 class Application
 {
@@ -41,7 +45,7 @@ class Application
         $this->client = new Client();
     }
 
-    public function setHttpClient($client): self
+    public function setHttpClient($client)
     {
         $this->client = $client;
 

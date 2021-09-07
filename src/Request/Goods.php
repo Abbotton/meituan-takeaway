@@ -80,17 +80,6 @@ class Goods extends BaseRequest
     }
 
     /**
-     * 查询商品详情.
-     *
-     * @param array $params
-     * @return string
-     */
-    public function detail(array $params)
-    {
-        return $this->post('gw/goodds/detail', $params);
-    }
-
-    /**
      * 查询门店商品列表.
      *
      * @param array $params
@@ -124,13 +113,46 @@ class Goods extends BaseRequest
     }
 
     /**
-     * 团好货查询商品品牌列表.
+     * 查询商品详情.
      *
-     * @param array $params
+     * @param  array  $params
      * @return string
      */
-    public function brandList(array $params)
+    public function detail(array $params)
     {
-        return $this->post('gw/goods/brand/list', $params);
+        return $this->get('gw/goods/detail', $params);
+    }
+
+    /**
+     * 批量修改商品上下架.
+     *
+     * @param  array  $params
+     * @return string
+     */
+    public function batchUpdateStatus(array $params)
+    {
+        return $this->post('gw/goods/batchUpdateStatus', $params);
+    }
+
+    /**
+     * 删除商品sku.
+     *
+     * @param  array  $params
+     * @return string
+     */
+    public function skuDelete(array $params)
+    {
+        return $this->post('gw/goods/sku/delete', $params);
+    }
+
+    /**
+     * 查询商品审核信息.
+     *
+     * @param  array  $params
+     * @return string
+     */
+    public function auditList(array $params)
+    {
+        return $this->get('gw/goods/audit/list', $params);
     }
 }

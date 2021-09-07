@@ -5,127 +5,6 @@ namespace Abbotton\MeituanTakeaway\Request;
 class Medicine extends BaseRequest
 {
     /**
-     * 创建药品分类.
-     *
-     * @param array $params
-     * @return string
-     */
-    public function catSave(array $params)
-    {
-        return $this->post('medicineCat/save', $params);
-    }
-
-    /**
-     * 更新药品分类.
-     *
-     * @param array $params
-     * @return string
-     */
-    public function catUpdate(array $params)
-    {
-        return $this->post('medicineCat/update', $params);
-    }
-
-    /**
-     * 删除药品分类.
-     *
-     * @param array $params
-     * @return string
-     */
-    public function catDelete(array $params)
-    {
-        return $this->post('medicineCat/delete', $params);
-    }
-
-    /**
-     * 查询门店药品分类列表.
-     *
-     * @param array $params
-     * @return string
-     */
-    public function catList(array $params)
-    {
-        return $this->get('medicineCat/list', $params);
-    }
-
-    /**
-     * 创建药品
-     *
-     * @param array $params
-     * @return string
-     */
-    public function save(array $params)
-    {
-        return $this->post('medicine/save', $params);
-    }
-
-    /**
-     * 更新药品
-     *
-     * @param array $params
-     * @return string
-     */
-    public function update(array $params)
-    {
-        return $this->post('medicine/update', $params);
-    }
-
-    /**
-     * 批量创建药品
-     *
-     * @param array $params
-     * @return string
-     */
-    public function batchsave(array $params)
-    {
-        return $this->post('medicine/batchsave', $params);
-    }
-
-    /**
-     * 批量更新药品
-     *
-     * @param array $params
-     * @return string
-     */
-    public function batchupdate(array $params)
-    {
-        return $this->post('medicine/batchupdate', $params);
-    }
-
-    /**
-     * 删除药品
-     *
-     * @param array $params
-     * @return string
-     */
-    public function delete(array $params)
-    {
-        return $this->post('medicine/delete', $params);
-    }
-
-    /**
-     * 查询门店药品列表.
-     *
-     * @param array $params
-     * @return string
-     */
-    public function list(array $params)
-    {
-        return $this->get('medicine/list', $params);
-    }
-
-    /**
-     * 批量更新药品库存.
-     *
-     * @param array $params
-     * @return string
-     */
-    public function stock(array $params)
-    {
-        return $this->post('medicine/stock', $params);
-    }
-
-    /**
      * 批量更新药品价格
      *
      * @param array $params
@@ -170,17 +49,6 @@ class Medicine extends BaseRequest
     }
 
     /**
-     * 查询药品标品审核结果.
-     *
-     * @param array $params
-     * @return mixed
-     */
-    public function auditResult(array $params)
-    {
-        return $this->get('medicine/audit/result', $params);
-    }
-
-    /**
      * 导入标品主图优化图片.
      *
      * @param array $params
@@ -200,5 +68,137 @@ class Medicine extends BaseRequest
     public function warehouseStock(array $params)
     {
         return $this->post('medicine/warehouse/stock', $params);
+    }
+
+    /**
+     * 查询门店药品详情.
+     *
+     * @param  array  $params
+     * @return mixed
+     */
+    public function medicineGet(array $params)
+    {
+        return $this->get('medicine/get', $params);
+    }
+
+    /**
+     * 查询药品标品审核结果.
+     *
+     * @param  array  $params
+     * @return mixed
+     */
+    public function auditResult(array $params)
+    {
+        return $this->get('gw/medicine/audit/result', $params);
+    }
+
+    /**
+     * 查询品牌商品库列表.
+     *
+     * @param  array  $params
+     * @return mixed
+     */
+    public function medicineHqMerchantList(array $params)
+    {
+        return $this->get('medicine/hq/merchant/list', $params);
+    }
+
+    /**
+     * 新建总部药品分类.
+     *
+     * @param  array  $params
+     * @return mixed
+     */
+    public function medicineCatHqSave(array $params)
+    {
+        return $this->post('medicineCat/hq/save', $params);
+    }
+
+    /**
+     * 删除总部药品分类.
+     *
+     * @param  array  $params
+     * @return mixed
+     */
+    public function medicineCatHqDelete(array $params)
+    {
+        return $this->post('medicineCat/hq/delete', $params);
+    }
+
+    /**
+     * 查询总部药品分类列表.
+     *
+     * @param  array  $params
+     * @return mixed
+     */
+    public function medicineCatHqList(array $params)
+    {
+        return $this->get('medicineCat/hq/list', $params);
+    }
+
+    /**
+     * 批量新建总部药品.
+     *
+     * @param  array  $params
+     * @return mixed
+     */
+    public function medicineHqBatchSave(array $params)
+    {
+        return $this->post('medicine/hq/batchSave', $params);
+    }
+
+    /**
+     * 批量更新总部药品.
+     *
+     * @param  array  $params
+     * @return mixed
+     */
+    public function medicineHqBatchUpdate(array $params)
+    {
+        return $this->post('medicine/hq/batchUpdate', $params);
+    }
+
+    /**
+     * 批量删除总部药品.
+     *
+     * @param  array  $params
+     * @return mixed
+     */
+    public function medicineHqBatchDelete(array $params)
+    {
+        return $this->post('medicine/hq/batchDelete', $params);
+    }
+
+    /**
+     * 查询总部药品详情.
+     *
+     * @param  array  $params
+     * @return mixed
+     */
+    public function medicineHqDetail(array $params)
+    {
+        return $this->get('medicine/hq/detail', $params);
+    }
+
+    /**
+     * 查询总部药品列表.
+     *
+     * @param  array  $params
+     * @return mixed
+     */
+    public function medicineHqList(array $params)
+    {
+        return $this->post('medicine/hq/list', $params);
+    }
+
+    /**
+     * 批量新增总部药品至门店.
+     *
+     * @param  array  $params
+     * @return mixed
+     */
+    public function medicineHqBatchAddPoi(array $params)
+    {
+        return $this->post('medicine/hq/batchAddPoi', $params);
     }
 }
