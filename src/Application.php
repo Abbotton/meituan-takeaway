@@ -6,7 +6,6 @@ use Abbotton\MeituanTakeaway\Request\Act;
 use Abbotton\MeituanTakeaway\Request\Comment;
 use Abbotton\MeituanTakeaway\Request\Delivery;
 use Abbotton\MeituanTakeaway\Request\Goods;
-use Abbotton\MeituanTakeaway\Request\GroupBuy;
 use Abbotton\MeituanTakeaway\Request\Im;
 use Abbotton\MeituanTakeaway\Request\Image;
 use Abbotton\MeituanTakeaway\Request\Medicine;
