@@ -27,5 +27,7 @@ $orderDetail = $app->order->getOrderDetail($params);
 
 print_r(json_decode($orderDetail, true));
 
+// 商品类、活动类接口支持异步队列
+$app->goods->async()->create([]);
 ......
 ```
