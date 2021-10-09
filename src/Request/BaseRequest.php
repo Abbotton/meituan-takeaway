@@ -61,7 +61,7 @@ class BaseRequest
         $method = strtoupper($method);
         if ($this->isAsync) {
             $options['headers'] = [
-                'request-process-way' => 'asyn'
+                'request-process-way' => 'asyn',
             ];
         }
         $response = $this->client->request($method, $url, $options);
@@ -90,6 +90,7 @@ class BaseRequest
     public function async()
     {
         $this->isAsync = true;
+
         return $this;
     }
 }
