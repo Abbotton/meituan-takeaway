@@ -37,4 +37,13 @@ class RequestTest extends TestCase
     {
         return '{"data":"ok"}';
     }
+
+    public function test_can_set_async()
+    {
+        $app = $this->getApplicationInstance()->goods;
+        $this->assertFalse($app->isAsync);
+
+        $app->async();
+        $this->assertTrue($app->isAsync);
+    }
 }

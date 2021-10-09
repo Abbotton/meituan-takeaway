@@ -10,6 +10,8 @@ class BaseRequest
 
     private $client;
 
+    public $isAsync = false;
+
     public function __construct(Config $config, $client)
     {
         $this->config = $config;
@@ -57,6 +59,11 @@ class BaseRequest
     private function request($method, $url, $options = [])
     {
         $method = strtoupper($method);
+        if ($this->isAsync) {
+            $options['headers'] = [
+                'request-process-way' => 'asyn'
+            ];
+        }
         $response = $this->client->request($method, $url, $options);
 
         return $response->getBody()->getContents();
@@ -75,5 +82,14 @@ class BaseRequest
         $params['sig'] = $sig;
 
         return $this->request('POST', $url, ['form_params' => $params]);
+    }
+
+    /**
+     * @return $this
+     */
+    public function async()
+    {
+        $this->isAsync = true;
+        return $this;
     }
 }
