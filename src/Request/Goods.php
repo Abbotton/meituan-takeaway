@@ -155,4 +155,15 @@ class Goods extends BaseRequest
     {
         return $this->get('gw/goods/audit/list', $params);
     }
+
+    /**
+     * 团好货查询商品品牌列表.
+     *
+     * @param  array  $params
+     * @return mixed
+     */
+    public function brandList(array $params)
+    {
+        return $this->get('goods/brand/list', $params);
+    }
 }

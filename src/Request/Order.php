@@ -571,7 +571,7 @@ class Order extends BaseRequest
      * @param  array  $params
      * @return string
      */
-    public function create(array $params)
+    public function logisticsLabelCreate(array $params)
     {
         return $this->post('gw/logistics/label/create', $params);
     }
@@ -630,4 +630,39 @@ class Order extends BaseRequest
     {
         return $this->post('gw/logistics/label/cancel', $params);
     }
+
+    /**
+     * 更新订单物流信息.
+     *
+     * @param  array  $params
+     * @return mixed
+     */
+    public function performUpdate(array $params)
+    {
+        return $this->post('gw/order/perform/update', $params);
+    }
+
+    /**
+     * 查询可克重退款商品详情.
+     *
+     * @param  array  $params
+     * @return mixed
+     */
+    public function getUnitPartRefundFoods(array $params)
+    {
+        return $this->get('order/getUnitPartRefundFoods', $params);
+    }
+
+    /**
+     * 全球购订单清关信息查询.
+     *
+     * @param  array  $params
+     * @return mixed
+     */
+    public function clearanceDetail(array $params)
+    {
+        return $this->get('gw/oversea/order/clearance/detail', $params);
+    }
+
+
 }

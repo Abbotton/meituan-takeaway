@@ -410,4 +410,136 @@ class Retail extends BaseRequest
     {
         return $this->post('gw/retail/batchGetAppSpuCodesBySkuIds', $params);
     }
+
+    /**
+     * 批量查询商品详情.
+     *
+     * @param  array  $params
+     * @return mixed
+     */
+    public function batchget(array $params)
+    {
+        return $this->get('retail/batchget', $params);
+    }
+
+    /**
+     * 查询总部商品库列表.
+     *
+     * @param  array  $params
+     * @return mixed
+     */
+    public function hQmerchantList(array $params)
+    {
+        return $this->get('retail/hq/merchant/list', $params);
+    }
+
+    /**
+     * 查询总部商品库列表.
+     *
+     * @param  array  $params
+     * @return mixed
+     */
+    public function hQmerchantInit(array $params)
+    {
+        return $this->post('retail/hq/merchant/init', $params);
+    }
+
+    /**
+     * 查询总部商品列表.
+     *
+     * @param  array  $params
+     * @return mixed
+     */
+    public function hQlist(array $params)
+    {
+        return $this->get('retail/hq/list', $params);
+    }
+
+    /**
+     * 批量新建总部商品.
+     *
+     * @param  array  $params
+     * @return mixed
+     */
+    public function hQbatchSave(array $params)
+    {
+        return $this->post('retail/hq/batchSave', $params);
+    }
+
+    /**
+     * 根据总部商品给门店批量新建商品.
+     *
+     * @param  array  $params
+     * @return mixed
+     */
+    public function hQbatchSaveToPoi(array $params)
+    {
+        return $this->post('retail/hq/batchSaveToPoi', $params);
+    }
+
+    /**
+     * 批量更新总部商品.
+     *
+     * @param  array  $params
+     * @return mixed
+     */
+    public function hQbatchUpdate(array $params)
+    {
+        return $this->post('retail/hq/batchUpdate', $params);
+    }
+
+    /**
+     * 批量更新总部商品.
+     *
+     * @param  array  $params
+     * @return mixed
+     */
+    public function hQbatchDelete(array $params)
+    {
+        return $this->post('retail/hq/batchDelete', $params);
+    }
+
+    /**
+     * 创建/更新总部商品SKU信息.
+     *
+     * @param  array  $params
+     * @return mixed
+     */
+    public function hQskuSave(array $params)
+    {
+        return $this->post('retail/hq/sku/save', $params);
+    }
+
+    /**
+     * 删除总部商品SKU信息.
+     *
+     * @param  array  $params
+     * @return mixed
+     */
+    public function hQskuDelete(array $params)
+    {
+        return $this->post('retail/hq/sku/delete', $params);
+    }
+
+    /**
+     * 根据商品名称和规格名称更换新总部商品编码.
+     *
+     * @param  array  $params
+     * @return mixed
+     */
+    public function hQupdateAppFoodCodeByNameAndSpec(array $params)
+    {
+        return $this->post('retail/hq/updateAppFoodCodeByNameAndSpec', $params);
+    }
+
+    /**
+     * 总部商品库根据原商品编码更换新商品编码.
+     *
+     * @param  array  $params
+     * @return mixed
+     */
+    public function hQupdateAppFoodCodeByOrigin(array $params)
+    {
+        return $this->post('retail/hq/updateAppFoodCodeByOrigin', $params);
+    }
 }

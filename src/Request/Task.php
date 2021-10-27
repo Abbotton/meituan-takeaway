@@ -14,4 +14,15 @@ class Task extends BaseRequest
     {
         return $this->get('task/detail', $params);
     }
+
+    /**
+     * 查询异步任务列表.
+     *
+     * @param  array  $params
+     * @return mixed
+     */
+    public function list(array $params)
+    {
+        return $this->get('task/list', $params);
+    }
 }
