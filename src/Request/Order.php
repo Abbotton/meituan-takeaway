@@ -663,6 +663,4 @@ class Order extends BaseRequest
     {
         return $this->get('gw/oversea/order/clearance/detail', $params);
     }
-
-
 }
